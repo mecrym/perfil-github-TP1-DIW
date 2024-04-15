@@ -125,4 +125,12 @@ body{
         float: right;
         max-height: none;
     }
+    .navbar .menu-icon{
+        display: none;
+    }
+}
+
+#carousel{
+    overflow: hidden;
+    margin-top: 56px;
 }

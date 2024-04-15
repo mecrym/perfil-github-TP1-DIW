@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil GitHub</title>
-    <link rel="stylesheet" href="\perfim-github-TP1-DIW\assets\css\main.css">
+    <link rel="stylesheet" href="\assets\css\main.css">
     <meta name="perfil-github" content="trabalho prático 1">
     <meta name = "author" content = "Maria Moreira">
 </head>
@@ -19,17 +19,32 @@ ORIENTAÇÃO: use componente do bootstrapLinks to an external site. (detalhes no
     Rodapé com informações sobre responsável pelo site (aluno/aluna) -->
 <body>
     <header>
-        <a href="perfil.html"><h1 id = "logo">seu nome</h1></a>
-        <nav>
-            <button>repositórios</button>
-            <button>conteúdo sugerido</button>
-            <button>colegas de trabalho</button>
+        <nav class="navbar">   
+            <a href="perfil.html" class="logo">LOGO/SEU NOME</a>
+            <input type="checkbox" class="menu-btn" id="menu-btn"/>
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <!--div class="menu"-->
+                <ul class="menu">
+                    <li><a href="#repositórios">repositórios</a></li>
+                    <li><a href="#conteúdo sugerido">conteúdo sugerido</a></li>
+                    <li><a href="#colegas de trabalho">colegas de trabalho</a></li>
+                </ul>
+            <!--/div-->
         </nav>
+        <br><br><br><br><!--gambiarra para n sumir com o nome da pagina-->
+        <!--<label for="blah">label here</label>
+        <input type="checkbox" id="blah">
+            isso aq mostra como q funciona, se vc clicar no texto, marca a caixinha tbm, é assim q funciona com o menu
+            o q esta no for tem q ser igual o id-->
     </header>
     <main>
         <section id="perfil">
+            <h2>Perfil</h2>
+            <hr>
             <img src="https://br.pinterest.com/pin/752382681512674020/" alt="foto perfil">
-            <h2>nome sobrenome</h2>
+            <strong>nome sobrenome</strong>
             <p>descrição do github</p>
             <p><strong>location:</strong> Belo Horizonte, MG, Brazil</p>
             <p><strong>site:</strong>(colocar link do github)</p>
@@ -71,24 +86,17 @@ ORIENTAÇÃO: use componente do bootstrapLinks to an external site. (detalhes no
         <section id="conteudo">
             <h2>Conteúdo Sugerido</h2>
             <hr>
+
             <div id="carousel">
                 <div class="sugestao1">
                     <img src="https://br.pinterest.com/pin/752382681512674020/" alt="imagem">
-                    <h3>titulo</h3>
-                    <p>descrição</p>
-                    <button>link</button>
+
                 </div>
                 <div class="sugestao2">
                     <img src="https://br.pinterest.com/pin/752382681512674020/" alt="imagem">
-                    <h3>titulo</h3>
-                    <p>descrição</p>
-                    <button>link</button>
                 </div>
                 <div class="sugestao3">
                     <img src="https://br.pinterest.com/pin/752382681512674020/" alt="imagem">
-                    <h3>titulo</h3>
-                    <p>descrição</p>
-                    <button>link</button>
                 </div>
 
         </section>
