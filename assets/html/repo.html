@@ -1,42 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Repositório</title>
-        <link rel="stylesheet" href="\perfim-github-TP1-DIW\assets\css\repo.css">
-        <meta name="perfil-github" content="trabalho prático 1 - segunda tela">
-        <meta name = "author" content = "Maria Moreira">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil GitHub</title>
+    <link rel="stylesheet" href="\assets\css\main.css">
+    <meta name="perfil-github" content="trabalho prático 1">
+    <meta name = "author" content = "Maria Moreira">
+</head>
+<!--Tela principal (index.html)
+    Cabeçalho com seu nome e menu de seções do site 
+    Seção1 - apresentação do seu perfil no GitHub com foto/avatar, nome e sobrenome, descrição, botões de contato (por exemplo, e-mail, Linkedin, etc)
+    Seção 2 - grupo de cards com informações dos repositórios mantidos pelo aluno no GitHub. (Pelo menos 3 itens)
+ORIENTAÇÃO: use componente do bootstrapLinks to an external site. (detalhes no link)
+    Seção 3 - carrossel/slider com conteúdos e respectivas imagens sugeridos pelo aluno (Artigos, vídeos, infográficos, etc) (Pelo menos 5 itens)
+ORIENTAÇÃO: use componente do bootstrapLinks to an external site. (detalhes no link)
+    Seção 4 - grade com apresentação dos principais colegas de trabalho no curso. (Pelo menos 3 itens)
+    Rodapé com informações sobre responsável pelo site (aluno/aluna) -->
 <body>
     <header>
-        <a href="perfil.html"><h1 id = "logo">seu nome</h1></a>
-        <nav>
-            <button>repositórios</button>
-            <button>conteúdo sugerido</button>
-            <button>colegas de trabalho</button>
+
+        <nav class="navbar">   
+            <a href="perfil.html" class="logo">LOGO/SEU NOME</a>
+            <input type="checkbox" class="menu-btn" id="menu-btn"/>
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <!--div class="menu"-->
+                <ul class="menu">
+                    <li><a href="#repositórios">repositórios</a></li>
+                    <li><a href="#conteúdo sugerido">conteúdo sugerido</a></li>
+                    <li><a href="#colegas de trabalho">colegas de trabalho</a></li>
+                </ul>
+            <!--/div-->
         </nav>
+
     </header>
-    </header>
-    <section>
-        <h2>Repositorio: nome do repositorio</h2>
-        <hr>
-        <h3>descrição</h3>
-        <p>descrição aq</p>
-        <h3>data de criação</h3>
-        <p>data</p>
-        <h3>linguagem</h3>
-        <p>linguagem do repositorio</p>
-        <h3>link de acesso</h3>
-        <a href="">link do repositorio</a>
-        <h3>Tópicos</h3>
-        <button>topico1</button>
-        <button>topico2</button>
-        <button>topico3</button>
-        <button>topico4</button>
-        <p>icone/estrela</p>
-        <p>icone/followers</p>
-    </section>
+    <main>
+        <section id="perfil">
+            <img src="https://br.pinterest.com/pin/752382681512674020/" alt="foto perfil">
+            <h2>nome sobrenome</h2>
+            <p>descrição do github</p>
+            <p><strong>location:</strong> Belo Horizonte, MG, Brazil</p>
+            <p><strong>site:</strong>(colocar link do github)</p>
+            <p>icone/followers numbers</p>
+            <button id="facebook">icone facebook</button>
+            <button id="twitter">icone TWITTER</button>
+            <button id="instagram">icone ig</button>
+        </section>
+
+        <section id="repositorios">
+            <h2>Repositórios (numero de repositorios)</h2>
+            <hr>
+            <div class="repositorio1">
+                <a href="repo.html"><h3>nome repositorios</h3></a>
+                <p>descrissão do repositorio</p>
+                <p>icone/estrela</p>
+                <p>icone/fork</p>
+            </div>
+            <div class="repositorio2">
+                <h3>nome repositorios</h3>
+                <p>descrissão do repositorio</p>
+                <p>icone/estrela</p>
+                <p>icone/fork</p>
+            </div>
+            <div class="repositorio3">
+                <h3>nome repositorios</h3>
+                <p>descrissão do repositorio</p>
+                <p>icone/estrela</p>
+                <p>icone/fork</p>
+            </div>
+            <div class="repositorio4">
+                <h3>nome repositorios</h3>
+                <p>descrissão do repositorio</p>
+                <p>icone/estrela</p>
+                <p>icone/fork</p>
+            </div>
+        </section>
+
+        <section id="conteudo">
+            <h2>Conteúdo Sugerido</h2>
+            <hr>
+            <div id="carousel">
+                <div class="sugestao1">
+                    <img src="https://br.pinterest.com/pin/752382681512674020/" alt="imagem">
+                    <h3>titulo</h3>
+                    <p>descrição</p>
+                    <button>link</button>
+                </div>
+                <div class="sugestao2">
+                    <img src="https://br.pinterest.com/pin/752382681512674020/" alt="imagem">
+                    <h3>titulo</h3>
+                    <p>descrição</p>
+                    <button>link</button>
+                </div>
+                <div class="sugestao3">
+                    <img src="https://br.pinterest.com/pin/752382681512674020/" alt="imagem">
+                    <h3>titulo</h3>
+                    <p>descrição</p>
+                    <button>link</button>
+                </div>
+
+        </section>
+        <secition id="colegas">
+            <h2>Colegas de Trabalho</h2>
+            <hr>
+            <div class="colega1">
+                <img src="https://br.pinterest.com/pin/752382681512674020/" alt="foto perfil">
+                <h3>nome</h3>
+            </div>
+            <div class="colega2">
+                <img src="https://br.pinterest.com/pin/752382681512674020/" alt="foto perfil">
+                <h3>nome</h3>
+            </div>
+            <div class="colega3">
+                <img src="https://br.pinterest.com/pin/752382681512674020/" alt="foto perfil">
+                <h3>nome</h3>
+            </div>
+        </secition>
+
+    </main>
     <footer>
         <hr>
         <p>Responsável pelo site: Maria Moreira</p>
