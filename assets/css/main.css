@@ -17,52 +17,7 @@ body{
     margin: 0;
     padding: 0;
 }
-/*.navbar{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #dad3d3;
-    padding: 15px;
-}
-.navbar a{
-    color: #333;
-    text-decoration: none;
-}
-.logo{
-    margin-right: 50px;
-}
-.list{
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
 
-#toggler{
-    .navbar label{
-        display: none;
-    }
-}
-@media screen and (max-width: 600px){
-    .menu{
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-    }
-    .list{
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-    .navbar label{
-        display: inline-flex;
-        align-items: center;
-        cursor: pointer;
-    }
-    #toggler:checked + .menu{
-        max-height: 100%;
-    }
-}*/
 .navbar{
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -145,4 +100,29 @@ body{
 .navbar .menu-btn:checked ~ .menu{/*checked: quando o menu está clicado, aparece o menu*/
     max-height: 240px;/*está animando por causa dos transition lá encima, sem isso só brota do nd*/
     
+}
+.navbar .menu-btn:checked ~ .menu-icon .nav-icon{
+    background: transparent;
+}
+.navbar .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+.navbar .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+@media (min-width: 768px){
+    .navbar li{
+        float: left;
+    }
+    .navbar li a{
+        padding: 20px 30px;
+    }
+    .navbar .menu{
+        clear: none;
+        float: right;
+        max-height: none;
+    }
 }
