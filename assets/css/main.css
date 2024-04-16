@@ -305,6 +305,15 @@ body {
 .repositorio1:hover {
     background-color: #ddd;
 }
+.repositorio2:hover {
+    background-color: #ddd;
+}
+.repositorio3:hover {
+    background-color: #ddd;
+}
+.repositorio4:hover {
+    background-color: #ddd;
+}
 
 #iconerepo {
     grid-template-columns: 1fr 1fr;
