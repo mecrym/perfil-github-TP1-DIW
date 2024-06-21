@@ -29,7 +29,7 @@ body {
     position: fixed;
     /*isso aq q esta dando bo com o resto*/
     width: 100%;
-    z-index: auto;
+    z-index: 1;
 }
 
 .navbar ul {
