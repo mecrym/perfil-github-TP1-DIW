@@ -1,0 +1,22 @@
+{
+    "carrossel": [
+        {
+            "id": 1,
+            "imagem": "https://github-readme-stats.vercel.app/api?username=mecrym&theme=midnight-purple&show_icons=true&hide_border=true&count_private=true",
+            "descricao": "Estatísticas do GitHub de mecrym",
+            "infoAdicional": "Preencha aqui com as informações desejadas"
+        },
+        {
+            "id": 2,
+            "imagem": "https://github-readme-streak-stats.herokuapp.com/?user=mecrym&theme=midnight-purple&hide_border=true",
+            "descricao": "Contribuições de mecrym",
+            "infoAdicional": "Preencha aqui com as informações desejadas"
+        },
+        {
+            "id": 3,
+            "imagem": "https://github-readme-stats.vercel.app/api/top-langs/?username=mecrym&theme=midnight-purple&show_icons=true&hide_border=true&layout=compact",
+            "descricao": "Linguagens mais utilizadas por mecrym",
+            "infoAdicional": "Preencha aqui com as informações desejadas"
+        }
+    ]
+}
