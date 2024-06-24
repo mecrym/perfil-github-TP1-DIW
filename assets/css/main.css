@@ -4,9 +4,11 @@
     padding: 0;
 }
 
-h2{
+
+h2 {
     margin-left: 40px;
 }
+
 a {
     text-decoration: none;
     color: #000;
@@ -185,14 +187,16 @@ body {
     height: auto;
     border-radius: 20%;
 }
-.iconeperfil{
+
+.iconeperfil {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
 
 }
-.iconefollow{
+
+.iconefollow {
     grid-template-columns: 1fr 1fr;
     display: flex;
     align-items: center;
@@ -225,14 +229,15 @@ body {
         width: auto;
         height: auto;
     }
-    #info{
+
+    #info {
         grid-template-columns: 1fr 1fr;
         display: flex;
         justify-content: space-between;
         gap: 10px;
     }
-    
-    .iconefollow{
+
+    .iconefollow {
         grid-template-columns: 1fr 1fr;
         display: flex;
         justify-content: space-evenly;
@@ -305,12 +310,15 @@ body {
 .repositorio1:hover {
     background-color: #ddd;
 }
+
 .repositorio2:hover {
     background-color: #ddd;
 }
+
 .repositorio3:hover {
     background-color: #ddd;
 }
+
 .repositorio4:hover {
     background-color: #ddd;
 }
@@ -318,17 +326,20 @@ body {
 #iconerepo {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "star fork";
-    display: flex;/*para alinhar os icones lado a lado*/
-    justify-content: flex-end;/*deveria colocar td no final mas n está funfando ainda*/
+    display: flex;
+    /*para alinhar os icones lado a lado*/
+    justify-content: flex-end;
+    /*deveria colocar td no final mas n está funfando ainda*/
     justify-self: flex-end;
     gap: 20px;
 }
 
 
 @media (min-width: 768px) {
-    #repositorios h2{
+    #repositorios h2 {
         align-items: flex-start;
     }
+
     #repositorios {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -362,16 +373,19 @@ body {
         grid-area: repositorio4;
         width: 100%;
     }
+
     #iconerepo {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "star fork";
-        display: flex;/*para alinhar os icones lado a lado*/
-        justify-content: space-evenly;/*deveria colocar td no final mas n está funfando ainda*/
+        display: flex;
+        /*para alinhar os icones lado a lado*/
+        justify-content: space-evenly;
+        /*deveria colocar td no final mas n está funfando ainda*/
         align-self: flex-end;
     }
 }
 
-#colegas{
+#colegas {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -381,12 +395,14 @@ body {
     align-items: stretch;
     justify-content: space-evenly;
 }
+
 #colegas img {
     max-width: 100%;
     height: auto;
     border-radius: 20%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 @media (min-width: 768px) {
     #colegas {
         display: grid;
@@ -412,7 +428,7 @@ body {
     width: 100%;
 }
 
-.carousel-open:checked + .carousel-item {
+.carousel-open:checked+.carousel-item {
     position: static;
     opacity: 100;
 }
@@ -435,7 +451,8 @@ body {
     border-radius: 50%;
     color: #fff;
     cursor: pointer;
-    display: none; /* Alterado para esconder todas as setas */
+    display: none;
+    /* Alterado para esconder todas as setas */
     font-size: 40px;
     height: 40px;
     line-height: 35px;
@@ -462,11 +479,11 @@ body {
     color: #aaaaaa;
 }
 
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3,
-#carousel-4:checked ~ .control-4,
-#carousel-5:checked ~ .control-5{
+#carousel-1:checked~.control-1,
+#carousel-2:checked~.control-2,
+#carousel-3:checked~.control-3,
+#carousel-4:checked~.control-4,
+#carousel-5:checked~.control-5 {
     display: block;
 }
 
@@ -498,21 +515,21 @@ body {
     color: #aaaaaa;
 }
 
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
-#carousel-3:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet,
-#carousel-3:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet {
+#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet,
+#carousel-3:checked~.control-4~.carousel-indicators li:nth-child(4) .carousel-bullet,
+#carousel-3:checked~.control-5~.carousel-indicators li:nth-child(5) .carousel-bullet {
     color: #aaaaaa;
 }
 
 
-footer{
+footer {
     background-color: #fff;
     color: #222;
     text-transform: capitalize;
     text-align: center;
     padding: 10px;
     bottom: 0;
-    
+
 }
