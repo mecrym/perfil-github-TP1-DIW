@@ -1,27 +1,46 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
-header {
-  background: #333;
-  color: #fff;
-  padding: 1em 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 1em;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
+#perfil{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+  padding: 2em;
+  grid-template-areas:  "foto nome"
+                        "foto bio"
+                        "foto info";
+}
+
+.fotoperfil {
+  grid-area: foto;
+  max-width: 350px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 40%;
+}
+
+.nome {
+  grid-area: nome;
+  font-size: 2em;
+}
+
+.descricao{
+  grid-area: bio;
+
 }
 
 section {
