@@ -6,7 +6,11 @@
     <title>Meu Site Pessoal</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/carrossel.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,33 +21,22 @@
                 <span class="nav-icon"></span>
             </label>
 
-                <ul class="menu">
-                    <li><a href="#perfil">Perfil</a></li>
-                    <li><a href="#repositorios">Repositórios</a></li>
-                    <li><a href="#conteudo">Conteúdo Sugerido</a></li>
-                    <li><a href="#colegas">Colegas de Trabalho</a></li>
-                    <li><a href="#seguindo">Pessoas que eu Sigo</a></li>
-                </ul>
-
+            <ul class="menu">
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#repositorios">Repositórios</a></li>
+                <li><a href="#conteudo">Conteúdo Sugerido</a></li>
+                <li><a href="#colegas">Colegas de Trabalho</a></li>
+                <li><a href="#seguindo">Pessoas que eu Sigo</a></li>
+            </ul>
         </nav>
     </header>
 
     <section id="perfil">
         <br><br><br>
-        <h2>Perfil</h2>
-        <hr>
         <!-- Dados do perfil do GitHub -->
     </section>
 
     <section id="calendar">
-        <!-- GitHub Calendar -->
-        <div class="github-calendar">
-            <!-- Aqui vai o código gerado pelo GitHub Calendar -->
-            <!-- Exemplo básico -->
-            <div class="contrib-cell" data-level="4"></div>
-            <div class="contrib-cell" data-level="2"></div>
-            <!-- ... mais células ... -->
-        </div>
     </section>
 
     <section id="repositorios">
@@ -53,20 +46,19 @@
         </div>
     </section>
 
-    <section id="conteudo">
-        <h2>Minhas Contribuições</h2>
-        <div id="contribuicoes">
-            <!-- Contribuições do GitHub -->
+    <section id="contribuicoes">
+    </section>
+
+    <section id="carrossel">
+        <h2>Carrossel de Imagens</h2>
+        <div class="carousel-container">
+            <!-- Carrossel será injetado aqui -->
         </div>
     </section>
-
-    <section id="colegas">
-        <h2>Colegas de Trabalho</h2>
-        <!-- Grade de colegas de trabalho -->
-    </section>
+    
 
     <section id="seguindo">
-        <h2>Pessoas que eu Sigo</h2>
+        <h2>Seguindo</h2>
         <div id="seguindo-lista" class="following-container">
             <!-- Lista de pessoas que você segue -->
         </div>
@@ -75,7 +67,8 @@
     <footer>
         <p>Informações sobre você</p>
     </footer>
-
+    
     <script src="scripts/main.js"></script>
+    <script src="scripts/carrossel.js"></script>
 </body>
 </html>

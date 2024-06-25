@@ -1,18 +1,22 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const GITHUB_API_URL = 'https://api.github.com';
-    const JSON_SERVER_URL = 'http://localhost:3000';
     const GITHUB_USERNAME = 'mecrym';
     const MY_TOKEN = 'hello'; // Token de autenticação GitHub
+    const LOCAL_JSON_FILENAME = 'db.json';
 
-    // Verificar limite de requisições
-    fetch('https://api.github.com/rate_limit', {
-        headers: {
-            Authorization: `Bearer ${MY_TOKEN}`
+    // Função para carregar dados do arquivo JSON local
+    const fetchLocalJSONData = async (filename) => {
+        try {
+            const response = await fetch(`../${filename}`); // Caminho para db.json, assumindo que está um nível acima de scripts
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`Erro ao buscar dados do JSON local (${filename}): ${error.message}`);
+            return null;
         }
-    })
-    .then(response => response.json())
-    .then(data => console.log('Rate limit data:', data))
-    .catch(error => console.error('Erro ao verificar limite de requisições:', error.message));
+    };
 
     const fetchGitHubData = async (endpoint) => {
         try {
@@ -31,19 +35,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    const fetchJSONServerData = async (endpoint) => {
-        try {   
-            const response = await fetch(`${JSON_SERVER_URL}/${endpoint}`);
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error(`Erro ao buscar dados do JSON Server (${endpoint}): ${error.message}`);
-            return null;
-        }
-    };
-
     const loadGitHubProfile = async () => {
         const profile = await fetchGitHubData(`users/${GITHUB_USERNAME}`);
         if (!profile) {
@@ -55,6 +46,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             <img class="fotoperfil" src="${profile.avatar_url}" alt="${profile.name}">
             <h2 class="nome">${profile.name}</h2>
             <p class="descricao">${profile.bio || 'Sem descrição'}</p>
+            <p class="seguidores"><strong>Seguidores:</strong> ${profile.followers}</p>
+            <p class="blog"><strong>Blog:</strong> ${profile.blog || 'Não especificado'}</p>
+            <p class="localizacao"><strong>Localização:</strong> ${profile.location || 'Não especificado'}
         `;
     };
 
@@ -98,10 +92,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     };
 
-    const loadJSONServerData = async () => {
-        const carrosselItems = await fetchJSONServerData('carrossel');
+    const loadLocalJSONData = async () => {
+        const carrosselItems = await fetchLocalJSONData('db.json'); // Carregar dados do db.json localmente
         if (!carrosselItems || carrosselItems.length === 0) {
-            console.error('Nenhum item de carrossel encontrado no JSON Server.');
+            console.error('Nenhum item encontrado no JSON local.');
             return;
         }
         const carrosselInner = document.getElementById('carrossel-items');
@@ -134,5 +128,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadGitHubProfile();
     await loadGitHubRepos();
     await loadGitHubFollowing();
-    await loadJSONServerData();
+    await loadLocalJSONData();
 });

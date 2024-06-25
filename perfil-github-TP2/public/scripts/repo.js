@@ -1,41 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const GITHUB_API_URL = 'https://api.github.com';
-    const urlParams = new URLSearchParams(window.location.search);
-    const repoName = urlParams.get('name');
-    const GITHUB_USERNAME = 'mecrym'; // Substitua pelo seu nome de usuário
-  
-    const fetchGitHubData = async (endpoint) => {
-      try {
-        const response = await fetch(`${GITHUB_API_URL}/${endpoint}`);
-        if (!response.ok) {
-          throw new Error(`Erro ao buscar dados: ${response.status}`);
-        }
-        return await response.json();
-      } catch (error) {
-        console.error('Erro ao buscar dados do GitHub:', error);
-      }
-    };
-  
-    const loadRepoDetails = async () => {
-      const repo = await fetchGitHubData(`repos/${GITHUB_USERNAME}/${repoName}`);
-      if (repo) {
-        const repoSection = document.getElementById('repositorio');
-        const languages = await fetchGitHubData(`repos/${GITHUB_USERNAME}/${repoName}/languages`);
-        const languagesList = Object.keys(languages).join(', ');
-  
-        repoSection.innerHTML = `
-          <h2>${repo.name}</h2>
-          <p>${repo.description}</p>
-          <p>Data de Criação: ${new Date(repo.created_at).toLocaleDateString()}</p>
-          <p>Linguagens Utilizadas: ${languagesList}</p>
-          <p><a href="${repo.html_url}" target="_blank">Link de Acesso</a></p>
-          <p>Favoritado: ${repo.stargazers_count} vezes</p>
-          <p>Forks: ${repo.forks_count}</p>
-        `;
-      }
-    };
-  
-    // Carregar dados ao iniciar a página
-    loadRepoDetails();
+  const carrosselData = {
+      "carrossel": [
+          {
+              "id": 1,
+              "imagem": "https://github-readme-stats.vercel.app/api?username=mecrym&theme=midnight-purple&show_icons=true&hide_border=true&count_private=true",
+              "descricao": "Estatísticas do GitHub de mecrym",
+              "infoAdicional": "Preencha aqui com as informações desejadas"
+          },
+          {
+              "id": 2,
+              "imagem": "https://github-readme-streak-stats.herokuapp.com/?user=mecrym&theme=midnight-purple&hide_border=true",
+              "descricao": "Contribuições de mecrym",
+              "infoAdicional": "Preencha aqui com as informações desejadas"
+          },
+          {
+              "id": 3,
+              "imagem": "https://github-readme-stats.vercel.app/api/top-langs/?username=mecrym&theme=midnight-purple&show_icons=true&hide_border=true&layout=compact",
+              "descricao": "Linguagens mais utilizadas por mecrym",
+              "infoAdicional": "Preencha aqui com as informações desejadas"
+          }
+      ]
+  };
+
+  const carouselImagesContainer = document.querySelector('.carousel-images');
+
+  carrosselData.carrossel.forEach(item => {
+      const imgElement = document.createElement('img');
+      imgElement.src = item.imagem;
+      imgElement.alt = item.descricao;
+      imgElement.classList.add('carousel-image');
+      carouselImagesContainer.appendChild(imgElement);
   });
-  
+
+  // Função para ajustar o carrossel
+  initCarousel();
+});
+
+function initCarousel() {
+  const carouselContainer = document.querySelector('.carousel-container');
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const carouselImages = document.querySelectorAll('.carousel-image');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+  let currentIndex = 0;
+
+  // Ajustar o tamanho das imagens
+  carouselImages.forEach(img => {
+      img.style.width = '70%';
+  });
+
+  // Funções para mover o carrossel
+  function showImage(index) {
+      const translateX = -index * carouselWrapper.clientWidth;
+      carouselWrapper.style.transform = `translateX(${translateX}px)`;
+  }
+
+  leftArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselImages.length - 1;
+      showImage(currentIndex);
+  });
+
+  rightArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex < carouselImages.length - 1) ? currentIndex + 1 : 0;
+      showImage(currentIndex);
+  });
+
+  // Tornar o carrossel responsivo
+  window.addEventListener('resize', () => {
+      showImage(currentIndex);
+  });
+
+  // Mostrar a primeira imagem inicialmente
+  showImage(currentIndex);
+}
