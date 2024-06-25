@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #c77dff;
+  color: #10002b;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo{
+  padding: 40px;
+  text-decoration: none;
+  font-family: "Climate Crisis", sans-serif;
+  font-optical-sizing: auto;
+}
+.linkperfil{
+  color: #f4f4f4;
+  text-decoration: none;
+}
+a{
+  list-style: none;
+  color: #10002b;
+}
+
+h2{
+  padding: 30px;
+  font-family: "Climate Crisis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;/*faz com que carregue outra fonte caso a primeira não carregue*/
+}
+
+#perfil2{
+  font-family: 'Roboto', sans-serif;
+  color: #f4f4f4;
+  line-height: 1;
+  font-size: 25px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/originals/5a/82/09/5a8209e560031605a8d6393985667e92.jpg");
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 70px;
+  row-gap: 20px;
+  padding-top: 200px;
+  padding-left: 200px;
+  padding-bottom: 80px;
+  grid-template-areas:  "foto nome"
+                        "foto bio"
+                        "foto seguidores"
+                        "foto localizacao"
+                        "github linkedin";
+  border-bottom: 2px solid #10002b;
+}
+
+@media (max-width: 1024px) {
+  #perfil2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:  "foto"
+                          "nome"
+                          "bio"
+                          "seguidores"
+                          "localizacao"
+                          "github"
+                          "linkedin";
+    padding-top: 300px;
+    padding-left: 50px;
+    padding-bottom: 80px;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #perfil2 {
+    grid-template-columns: 1fr;
+    grid-template-areas:  "foto"
+                          "nome"
+                          "bio"
+                          "seguidores"
+                          "localizacao"
+                          "github"
+                          "linkedin";
+    padding-top: 150px;
+    padding-left: 80px;
+    transition: 0.5s;
+  }
+}
+
+.fotoperfil {
+  align-items: center;
+  grid-area: foto;
+  max-width: 350px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #02000c;
+}
+
+.nome {
+  grid-area: nome;
+  font-size: 2em;
+  text-align: center;
+}
+
+.descricao{
+  grid-area: bio;
+}
+
+.seguidores{
+  grid-area: seguidores;
+}
+
+.localizacao{
+  grid-area: localizacao;
+}
+
+.github{
+  grid-area: github;
+  margin-left: 50px;
+}
+
+.linkedin{
+  grid-area: linkedin;
+}
+
+section {
+  padding: 2em;
+}
+
+#repositorios{
+  padding: 2em;
+  background-color: #f3daf5;
+  border-bottom: #10002b 2px solid;
+}
+
+.repos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  text-align:justify;
+
+}
+
+.repo-card {
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #10002b;
+  padding: 1em;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+#seguindo{
+  padding: 2em;
+  background-color: #f3daf5;
+  border-bottom: #10002b 2px solid;
+  border-top: #10002b 2px solid;
+}
+
+.following-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.following-card {
+  min-width: fit-content;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border: 2px solid #10002b;
+  border-radius: 5px;
+  background: #f9f9f9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "foto nome";
+
+}
+
+@media screen and (max-width: 768px){
+  .following-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "foto"
+                          "nome";
+  }
+}
+
+.fotoseguindo{
+  margin: auto;
+  grid-area: foto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #10002b;
+}
+
+.linkgithubseguindo{
+  grid-area: nome;
+  margin: auto;
+  text-align: center;
+  color: #10002b;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "roboto", sans-serif;
+}
+
+footer {
+  font-family: "roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  background: #e0aaff;
+  color: #10002b;
+  text-align: center;
+  padding: 1em 0;
+}
+
+
+

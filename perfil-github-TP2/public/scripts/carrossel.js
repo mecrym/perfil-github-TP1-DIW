@@ -8,15 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function createCarousel(images) {
-    const carouselContainer = document.querySelector('.carousel-container');
-
-    const carouselInner = document.createElement('div');
-    carouselInner.className = 'carousel-inner';
+    const carouselInner = document.querySelector('.carousel-inner');
+    let currentIndex = 0;
 
     images.forEach((image, index) => {
         const imgDiv = document.createElement('div');
         imgDiv.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-
+        
         const imgElement = document.createElement('img');
         imgElement.src = image.imagem;
         imgElement.alt = image.descricao;
@@ -25,44 +23,28 @@ function createCarousel(images) {
         carouselInner.appendChild(imgDiv);
     });
 
-    carouselContainer.appendChild(createArrow('prev', '&lsaquo;'));
-    carouselContainer.appendChild(carouselInner);
-    carouselContainer.appendChild(createArrow('next', '&rsaquo;'));
+    document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+        moveToSlide(currentIndex - 1);
+    });
 
-    addCarouselFunctionality();
-}
+    document.querySelector('.carousel-control-next').addEventListener('click', () => {
+        moveToSlide(currentIndex + 1);
+    });
 
-function createArrow(direction, symbol) {
-    const arrow = document.createElement('a');
-    arrow.className = `carousel-control-${direction}`;
-    arrow.innerHTML = symbol;
-    arrow.href = '#';
-    return arrow;
-}
+    function moveToSlide(index) {
+        const totalSlides = images.length;
+        if (index < 0) {
+            index = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            index = 0;
+        }
 
-function addCarouselFunctionality() {
-    let currentIndex = 0;
+        const currentSlide = document.querySelector('.carousel-item.active');
+        const nextSlide = document.querySelector(`.carousel-item:nth-child(${index + 1})`);
 
-    const prevArrow = document.querySelector('.carousel-control-prev');
-    const nextArrow = document.querySelector('.carousel-control-next');
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
+        currentSlide.classList.remove('active');
+        nextSlide.classList.add('active');
 
-    function showItem(index) {
-        items[currentIndex].classList.remove('active');
-        items[index].classList.add('active');
         currentIndex = index;
     }
-
-    prevArrow.addEventListener('click', (e) => {
-        e.preventDefault();
-        const newIndex = (currentIndex - 1 + totalItems) % totalItems;
-        showItem(newIndex);
-    });
-
-    nextArrow.addEventListener('click', (e) => {
-        e.preventDefault();
-        const newIndex = (currentIndex + 1) % totalItems;
-        showItem(newIndex);
-    });
 }

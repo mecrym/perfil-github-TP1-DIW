@@ -1,10 +1,12 @@
 .navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0aaff;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
     position: fixed;
     /*isso aq q esta dando bo com o resto*/
     width: 100%;
     z-index: 1;
+    padding-bottom: 0px;
+    border-bottom: #10002b 2px solid;
 }
 
 .navbar ul {
@@ -13,19 +15,20 @@
     list-style: none;
     /*delisga bullet points e numeros*/
     overflow: hidden;
-    background-color: #fff;
+    background-color: #e0aaff;
 }
 
 .navbar li a {
     display: block;
-    outline: 1px solid #ddd;
+    outline: 1px solid #c77dff;
     padding: 20px;
     border-right: 1px solid #aaa;
     text-decoration: none;
+    color: #10002b;
 }
 
 .navbar ul a:hover {
-    background-color: #ddd;
+    background-color: #c77dff;
 
 }
 
@@ -34,6 +37,8 @@
     display: block;
     font-size: 2em;
     padding: 10px 20px;
+    text-decoration: none;
+    color: #10002b;
 
 }
 
@@ -54,7 +59,7 @@
 }
 
 .navbar .menu-icon .nav-icon {
-    background-color: #333;
+    background-color: #10002b;
     display: block;
     height: 2px;
     width: 18px;
@@ -65,7 +70,7 @@
 }
 
 .navbar .menu-icon .nav-icon:before {
-    background: #333;
+    background: #10002b;
     content: " ";
     /*voltar aq*/
     display: block;
@@ -79,7 +84,7 @@
 }
 
 .navbar .menu-icon .nav-icon:after {
-    background: #333;
+    background: #10002b;
     content: " ";
     /*voltar aq*/
     display: block;
@@ -118,22 +123,26 @@
     top: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1240px) {
     .navbar li {
         float: left;
+        transition: 0.5s;
     }
 
     .navbar li a {
         padding: 20px 30px;
+        transition: 0.5s;
     }
 
     .navbar .menu {
         clear: none;
         float: right;
         max-height: none;
+        transition: 0.5s;
     }
 
     .navbar .menu-icon {
         display: none;
+        transition: 0.5s;
     }
 }

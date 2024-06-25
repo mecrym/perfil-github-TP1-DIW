@@ -41,14 +41,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.error(`Perfil do usuário ${GITHUB_USERNAME} não encontrado.`);
             return;
         }
-        const profileSection = document.getElementById('perfil');
+        const profileSection = document.getElementById('perfil2');
         profileSection.innerHTML = `
             <img class="fotoperfil" src="${profile.avatar_url}" alt="${profile.name}">
             <h2 class="nome">${profile.name}</h2>
             <p class="descricao">${profile.bio || 'Sem descrição'}</p>
             <p class="seguidores"><strong>Seguidores:</strong> ${profile.followers}</p>
-            <p class="blog"><strong>Blog:</strong> ${profile.blog || 'Não especificado'}</p>
-            <p class="localizacao"><strong>Localização:</strong> ${profile.location || 'Não especificado'}
+            <p class="localizacao"><strong>Localização:</strong> ${profile.location || 'Não informada'}</p>
+            <p class="github"><strong>GitHub: </strong> <a class="linkperfil" href="${profile.html_url}" target="_blank">mecrym</a></p>
+            <p class="linkedin"><strong>LinkedIn: </strong> <a class="linkperfil" href="https://www.linkedin.com/in/mecrym/" target="_blank">Maria Moreira</a></p>
+
         `;
     };
 
@@ -84,43 +86,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             const userDiv = document.createElement('div');
             userDiv.classList.add('following-card');
             userDiv.innerHTML = `
-                <img src="${user.avatar_url}" alt="${user.login}">
-                <h3>${user.login}</h3>
-                <a href="${user.html_url}" target="_blank">Ver Perfil</a>
+                <img class="fotoseguindo" src="${user.avatar_url}" alt="${user.login}">
+                <a class="linkgithubseguindo" href="${user.html_url}" target="_blank">GitHub</a>
             `;
             followingSection.appendChild(userDiv);
-        });
-    };
-
-    const loadLocalJSONData = async () => {
-        const carrosselItems = await fetchLocalJSONData('db.json'); // Carregar dados do db.json localmente
-        if (!carrosselItems || carrosselItems.length === 0) {
-            console.error('Nenhum item encontrado no JSON local.');
-            return;
-        }
-        const carrosselInner = document.getElementById('carrossel-items');
-        carrosselInner.innerHTML = '';
-        carrosselItems.forEach((item, index) => {
-            const carouselItemDiv = document.createElement('div');
-            carouselItemDiv.classList.add('carousel-item');
-            if (index === 0) carouselItemDiv.classList.add('active');
-
-            const iframe = document.createElement('iframe');
-            iframe.classList.add('d-block', 'w-100');
-            iframe.src = item.imagem;
-            iframe.style.height = '300px';
-
-            carouselItemDiv.appendChild(iframe);
-
-            const carouselCaptionDiv = document.createElement('div');
-            carouselCaptionDiv.classList.add('carousel-caption', 'd-none', 'd-md-block');
-            carouselCaptionDiv.innerHTML = `
-                <h5>${item.descricao}</h5>
-                <p>${item.infoAdicional || 'Sem informações adicionais'}</p>
-            `;
-            carouselItemDiv.appendChild(carouselCaptionDiv);
-
-            carrosselInner.appendChild(carouselItemDiv);
         });
     };
 
