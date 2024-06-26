@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const GITHUB_API_URL = 'https://api.github.com';
     const GITHUB_USERNAME = 'mecrym';
-    const MY_TOKEN = 'hello'; // Token de autenticação GitHub
+    const MY_TOKEN = ''; // Token de autenticação GitHub
     const LOCAL_JSON_FILENAME = 'db.json';
 
     // Função para carregar dados do arquivo JSON local
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
     };
 
-    const loadGitHubRepos = async () => {
+    /*const loadGitHubRepos = async () => {
         const repos = await fetchGitHubData(`users/${GITHUB_USERNAME}/repos`);
         if (!repos || repos.length === 0) {
             console.error(`Nenhum repositório encontrado para o usuário ${GITHUB_USERNAME}.`);
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             `;
             reposSection.appendChild(repoDiv);
         });
-    };
+    };*/
 
     const loadGitHubFollowing = async () => {
         const following = await fetchGitHubData(`users/${GITHUB_USERNAME}/following`);

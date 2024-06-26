@@ -75,6 +75,22 @@ h2{
     padding-bottom: 80px;
     transition: 0.5s;
   }
+
+  .fotoperfil{
+    align-items: center;
+    grid-area: foto;
+  }
+
+  .nome {
+    grid-area: nome;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .descricao{
+    grid-area: bio;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 768px) {

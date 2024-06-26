@@ -1,50 +1,58 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('img.json')
-        .then(response => response.json())
-        .then(data => {
-            createCarousel(data.carrossel);
-        })
-        .catch(error => console.error('Erro ao buscar os dados do carrossel:', error));
-});
+document.addEventListener('DOMContentLoaded', async () => {
+    const carouselContainer = document.getElementById('carousel-inner');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const dbPath = 'http://localhost:3000/carrossel'; // URL para acessar o JSON servido pelo json-server
 
-function createCarousel(images) {
-    const carouselInner = document.querySelector('.carousel-inner');
-    let currentIndex = 0;
+    // Função para buscar dados do JSON local
+    const fetchLocalJSONData = async (path) => {
+        try {
+            const response = await fetch(path);
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`Erro ao buscar dados do JSON local (${path}): ${error.message}`);
+            return null;
+        }
+    };
 
-    images.forEach((image, index) => {
-        const imgDiv = document.createElement('div');
-        imgDiv.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-        
-        const imgElement = document.createElement('img');
-        imgElement.src = image.imagem;
-        imgElement.alt = image.descricao;
-
-        imgDiv.appendChild(imgElement);
-        carouselInner.appendChild(imgDiv);
-    });
-
-    document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-        moveToSlide(currentIndex - 1);
-    });
-
-    document.querySelector('.carousel-control-next').addEventListener('click', () => {
-        moveToSlide(currentIndex + 1);
-    });
-
-    function moveToSlide(index) {
-        const totalSlides = images.length;
-        if (index < 0) {
-            index = totalSlides - 1;
-        } else if (index >= totalSlides) {
-            index = 0;
+    // Carregar imagens do carrossel
+    const loadCarouselImages = async () => {
+        const data = await fetchLocalJSONData(dbPath);
+        if (!data || !Array.isArray(data)) {
+            console.error('Nenhuma imagem encontrada no carrossel.');
+            return;
         }
 
-        const currentSlide = document.querySelector('.carousel-item.active');
-        const nextSlide = document.querySelector(`.carousel-item:nth-child(${index + 1})`);
+        data.forEach((item) => {
+            const imgDiv = document.createElement('div');
+            imgDiv.classList.add('carousel-item');
+            imgDiv.innerHTML = `<img src="${item.imagem}" alt="${item.descricao}" />`;
+            carouselContainer.appendChild(imgDiv);
+        });
 
-        currentSlide.classList.remove('active');
-        nextSlide.classList.add('active');
+        updateCarousel();
+    };
 
-        currentIndex = index;
-    }
-}
+    let currentIndex = 0;
+
+    const updateCarousel = () => {
+        const items = document.querySelectorAll('.carousel-item');
+        const offset = -currentIndex * 100;  // Calcula a posição de deslocamento
+        carouselContainer.style.transform = `translateX(${offset}%)`;
+    };
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? carouselContainer.children.length - 1 : currentIndex - 1;
+        updateCarousel();
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === carouselContainer.children.length - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    });
+
+    await loadCarouselImages();
+});
