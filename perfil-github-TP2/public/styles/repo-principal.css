@@ -20,7 +20,7 @@
     grid-template-columns: 1fr 1fr;
     max-height: 250px;
     min-height: 250px;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
     border: 2px solid #10002b;
     border-radius: 5px;
     background: #f9f9f9;

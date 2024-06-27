@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <h3>Linguagens</h3>
                 <p>${repo.language || 'Não especificada'}</p>
                 <h3>Link de acesso</h3>
-                <a href="${repo.html_url}" target="_blank">${repo.html_url}</a>
+                <a href="${repo.html_url}" target="_blank">Repositório GitHub</a>
             </div>
             <div class="icones">
                 <div class="starfork">

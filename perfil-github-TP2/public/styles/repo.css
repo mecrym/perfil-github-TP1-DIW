@@ -1,62 +1,77 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin-top:0 ;
     padding: 0;
 }
 
 h2{
-    margin-left: 40px;
+    margin: 30px;
+    margin-left: 30px;
+    font-family: "Climate Crisis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;/*faz com que carregue outra fonte caso a primeira não carregue*/
 }
 
-a {
-    text-decoration: none;
-    color: #000;
-    margin-left: 10px;
+
+#repo{
+    margin: 5%;
+    border: #10002b 2px solid;
+    border-radius: 2%;
+    max-width: 90%;
+    align-items: center;
+    background-color: #e0aaff;
+}   
+
+hr{
+    border: 1px solid #10002b;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-body{
+#repo-name{
+
+}
+#repositorio-details{
+    background-color: #f0e0fa;
+    border-end-end-radius: 2%;
+    border-end-start-radius: 2%;
+    padding: 5%;
+    display: grid;
+}
+
+body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #c77dff;
+    color: #10002b;
     line-height: 1.6;
     font-size: 16px;
     margin: 0;
     padding: 0;
 }
 
-#repositorio1{
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 20px;
+h3{
+    text-transform: capitalize;
+    font-family: "Climate Crisis", sans-serif;
+    font-size: 25px;
 }
-h2{
-    margin-left: 40px;
+a {
+    text-decoration: none;
+    color: #4f15b3;
+    font-size: 20px;
 }
-#repositorio1{
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 20px;
-}
+
 h3{
     text-transform: capitalize;
 }
 p{
+    font-size: 20px;
     margin-top: 10px;
     margin-left: 10px;
 }
-footer{
-    background-color: #fff;
-    color: #222;
-    text-transform: capitalize;
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
 
-}
-button{
-    background-color: #222;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+.icones{
+    display: flex;
+    justify-content: space-between;
 }
