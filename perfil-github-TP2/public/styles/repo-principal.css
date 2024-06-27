@@ -2,7 +2,6 @@
     padding: 2em;
     background-color: #f3daf5;
     border-bottom: #10002b 2px solid;
-
 }
 
 .repos-container {
@@ -10,15 +9,261 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
     text-align: justify;
-
 }
 
 .repo-card {
-    max-height: 300px;
-    min-height: 300px;
+    display: grid;
+    grid-template-areas:
+        "repo-name repo-name"
+        "starfork starfork"
+        "link link";
+    grid-template-columns: 1fr 1fr;
+    max-height: 250px;
+    min-height: 250px;
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
     border: 2px solid #10002b;
-    padding: 1em;
     border-radius: 5px;
     background: #f9f9f9;
+}
+
+.starfork{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "star fork";
+    display: flex;
+    gap: 10em;
+}
+
+.repo-card h3 {
+    grid-area: repo-name;
+    font-size: 1.5em;
+    margin: 5px;
+    text-align: center;
+}
+
+.icones {
+ 
+}
+
+.star{
+    grid-area: star;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    margin-left: 10%;
+}
+
+.fork{
+    grid-area: fork;
+    display: flex;
+    align-items: center;
+}
+
+.repo-link {
+    grid-area: link;
+    text-align: center;
+    
+}
+
+.repo-link a {
+    text-decoration: none;
+    color: #4a6696;
+    font-weight: bold;
+}
+
+.repo-name{
+    grid-area: repo-name;
+    font-size: 1.5em;
+    margin: 5px;
+    text-align: center;
+    background-color: #f3daf5;
+    border: #10002b 2px solid;
+    min-height: 160px;
+    max-height: 160px;
+    min-width: fit-content;
+
+}
+
+@media (max-width: 1024px) {
+    .repos-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1em;
+        text-align: justify;
+    }
+    .repo-card {
+        display: grid;
+        grid-template-areas:
+            "repo-name repo-name"
+            "starfork starfork"
+            "link link";
+        grid-template-columns: 1fr 1fr;
+        max-height: 400px;
+        min-height: 400px;
+        min-width: fit-content;
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+        border: 2px solid #10002b;
+        padding: 10px;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+    .starfork{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "star";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5em;
+    }
+    .icones {
+        grid-area: starfork;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20%;
+    }
+    .star{
+        grid-area: star;
+        display: flex;
+        align-items: center;
+    }
+    .fork{
+        grid-area: fork;
+        display: flex;
+        align-items: center;
+    }
+    .repo-link {
+        grid-area: link;
+        text-align: center;
+    }
+    .repo-link a {
+        text-decoration: none;
+        color: #4a6696;
+        font-weight: bold;
+    }
+    .repo-card h3 {
+        grid-area: repo-name;
+        font-size: 1.5em;
+        margin: 5px;
+        text-align: center;
+    }
+    .repos-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1em;
+        text-align: justify;
+    }
+    .repo-card {
+        display: grid;
+        grid-template-areas:
+            "repo-name"
+            "starfork"
+            "link";
+        grid-template-columns: 1fr;
+        max-height: 3500px;
+        min-height: 350px;
+        min-width: fit-content;
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+        border: 2px solid #10002b;
+}
+.repo-name{
+    grid-area: repo-name;
+    font-size: 1.5em;
+    margin: 5px;
+    text-align: center;
+    background-color: #f3daf5;
+    border: #10002b 2px solid;
+    min-height: 150px;
+    min-width: fit-content;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .repo-card {
+        display: grid;
+        grid-template-areas:
+            "repo-name"
+            "starfork"
+            "link";
+        grid-template-columns: 1fr;
+        max-height: 400px;
+        min-height: 400px;
+        min-width: fit-content;
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+        border: 2px solid #10002b;
+        padding: 10px;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+    .starfork{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "star";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5em;
+    }
+    .icones {
+        grid-area: starfork;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20%;
+    }
+    .star{
+        grid-area: star;
+        display: flex;
+        align-items: center;
+    }
+    .fork{
+        grid-area: fork;
+        display: flex;
+        align-items: center;
+    }
+    .repo-link {
+        grid-area: link;
+        text-align: center;
+    }
+    .repo-link a {
+        text-decoration: none;
+        color: #4a6696;
+        font-weight: bold;
+    }
+    .repo-card h3 {
+        grid-area: repo-name;
+        font-size: 1.5em;
+        margin: 5px;
+        text-align: center;
+    }
+    .repos-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1em;
+        text-align: justify;
+    }
+    .repo-card {
+        display: grid;
+        grid-template-areas:
+            "repo-name"
+            "starfork"
+            "link";
+        grid-template-columns: 1fr;
+        max-height: 3500px;
+        min-height: 350px;
+        min-width: fit-content;
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+        border: 2px solid #10002b;
+}
+.repo-name{
+    grid-area: repo-name;
+    font-size: 1.5em;
+    margin: 5px;
+    text-align: center;
+    background-color: #f3daf5;
+    border: #10002b 2px solid;
+    min-height: 150px;
+    min-width: fit-content;
+    }
 }
