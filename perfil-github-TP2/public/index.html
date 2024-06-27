@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/main2.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/carrossel.css">
+    <link rel="stylesheet" href="styles/repo-principal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
@@ -40,23 +41,50 @@
     </section>
 
     <section id="conteudo">
-        <h2>Stats GitHub</h2>
-        <div class="carousel-container">
-            <div id="carousel" class="carousel">
-                <div id="carousel-inner" class="carousel-inner">
-                    <!-- Imagens do carrossel serão carregadas aqui -->
+        <div id="carousel">
+            <div class="acarousel-inner">
+                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                <div class="carousel-item">
+                    <a href="https://www.w3schools.com/html/default.asp">
+                        <img src= "https://github-readme-stats.vercel.app/api?username=mecrym&theme=midnight-purple&show_icons=true&hide_border=true&count_private=true" alt="HTML">
+                    </a>
+                    
                 </div>
-                <button id="prev" class="carousel-control prev">‹</button>
-                <button id="next" class="carousel-control next">›</button>
+                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <a href="https://www.w3schools.com/css/default.asp">
+                        <img src="https://github-readme-streak-stats.herokuapp.com/?user=mecrym&theme=midnight-purple&hide_border=true" alt="CSS">
+                    </a>
+                </div>
+                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                <div class="carousel-item">
+                    <a href="https://www.w3schools.com/js/default.asp">
+                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mecrym&theme=midnight-purple&show_icons=true&hide_border=true&layout=compact" alt="JavaScript">
+                    </a>
+                </div>
+                
+                <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+                <label for="carousel-2" class="carousel-control next control-1">›</label>
+                <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                <label for="carousel-3" class="carousel-control next control-2">›</label>
+                <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                <label for="carousel-1" class="carousel-control next control-3">›</label>
+                
+                <ol class="carousel-indicators">
+                    <li>
+                        <label for="carousel-1" class="carousel-bullet">•</label>
+                    </li>
+                    <li>
+                        <label for="carousel-2" class="carousel-bullet">•</label>
+                    </li>
+                    <li>
+                        <label for="carousel-3" class="carousel-bullet">•</label>
+                    </li>
+                    
+                </ol>
             </div>
         </div>
-    </section>
-
-    <section id="carrossel">
-        <h2> Stats GitHub </h2>
-        <div class="carousel-container">
-            <!-- Carrossel com informações do GitHub -->
-        </div>
+        
     </section>
 
     <section id="seguindo">

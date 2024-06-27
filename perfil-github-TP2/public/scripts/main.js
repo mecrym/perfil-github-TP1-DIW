@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
     };
 
-    /*const loadGitHubRepos = async () => {
-        const repos = await fetchGitHubData(`users/${GITHUB_USERNAME}/repos`);
+    const loadGitHubRepos = async () => {
+        /*const repos = await fetchGitHubData(`users/${GITHUB_USERNAME}/repos`);
         if (!repos || repos.length === 0) {
             console.error(`Nenhum repositório encontrado para o usuário ${GITHUB_USERNAME}.`);
             return;
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <a href="repo.html?name=${repo.name}" target="_blank">Acessar Detalhes</a>
             `;
             reposSection.appendChild(repoDiv);
-        });
-    };*/
+        });*/
+    };
 
     const loadGitHubFollowing = async () => {
         const following = await fetchGitHubData(`users/${GITHUB_USERNAME}/following`);

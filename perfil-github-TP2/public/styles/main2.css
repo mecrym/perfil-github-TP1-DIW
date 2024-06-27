@@ -49,15 +49,17 @@ h2{
   grid-template-columns: 1fr 2fr;
   column-gap: 70px;
   row-gap: 20px;
-  padding-top: 200px;
-  padding-left: 200px;
+  padding-top: 100px;
+  padding-left: 100px;
   padding-bottom: 80px;
   grid-template-areas:  "foto nome"
                         "foto bio"
                         "foto seguidores"
                         "foto localizacao"
-                        "github linkedin";
+                        "foto github"
+                        "foto linkedin";
   border-bottom: 2px solid #10002b;
+  max-height: fit-content;
 }
 
 @media (max-width: 1024px) {
@@ -70,15 +72,16 @@ h2{
                           "localizacao"
                           "github"
                           "linkedin";
-    padding-top: 300px;
+    padding-top: 30px;
     padding-left: 50px;
     padding-bottom: 80px;
     transition: 0.5s;
+    
   }
 
   .fotoperfil{
-    align-items: center;
     grid-area: foto;
+    max-width: 100px;
   }
 
   .nome {
@@ -110,7 +113,7 @@ h2{
 }
 
 .fotoperfil {
-  align-items: center;
+  justify-self: center;
   grid-area: foto;
   max-width: 350px;
   max-height: 300px;
@@ -147,31 +150,6 @@ h2{
   grid-area: linkedin;
 }
 
-section {
-  padding: 2em;
-}
-
-#repositorios{
-  padding: 2em;
-  background-color: #f3daf5;
-  border-bottom: #10002b 2px solid;
-}
-
-.repos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1em;
-  text-align:justify;
-
-}
-
-.repo-card {
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid #10002b;
-  padding: 1em;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
 
 #seguindo{
   padding: 2em;
